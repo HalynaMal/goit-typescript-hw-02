@@ -4,7 +4,7 @@ import { Image } from "../../types";
 
 interface ImageCardProps {
   images: Image[];
-  openModal: (image: Image) => void;
+  openModal: (id: string) => void;
 }
 
 const ImageGallery: React.FC<ImageCardProps> = ({ images, openModal }) => {
@@ -14,7 +14,7 @@ const ImageGallery: React.FC<ImageCardProps> = ({ images, openModal }) => {
         images.map((image) => {
           return (
             <li className={css.imageItem} key={image.id}>
-              <ImageCard image={image} openModal={() => openModal(image)} />
+              <ImageCard image={image} openModal={openModal} />
             </li>
           );
         })}

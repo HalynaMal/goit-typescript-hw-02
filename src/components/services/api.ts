@@ -2,6 +2,7 @@ import axios from "axios";
 const apiKey = "Py_iDo0pAQqvEYoMBPZrJ7mc9_8W17Y3JqrImjifwlY";
 
 interface UnsplashResponse {
+  results: [];
   total_pages: number;
   // results: ;
   data: string;

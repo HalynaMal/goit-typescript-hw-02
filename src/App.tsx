@@ -19,7 +19,7 @@ function App() {
   const [error, setError] = useState<boolean>(false);
   const [btnLoadMore, setBtnLoadMore] = useState<boolean>(false);
   const [modalIsOpen, setIsOpen] = useState<boolean>(false);
-  const [modalImage, setModalImage] = useState<string>("");
+  const [modalImage, setModalImage] = useState<Image | null>(null);
 
   useEffect(() => {
     if (query.length === 0) return;
@@ -47,8 +47,9 @@ function App() {
   const loadMore = () => {
     setPage((prevPage) => prevPage + 1);
   };
-  const openModal = (id: number) => {
-    setModalImage(images.filter((image) => image.id === id));
+  const openModal = (id: string) => {
+    const imageModal = images.filter((image) => image.id === id)[0];
+    setModalImage(imageModal);
     setIsOpen(true);
     document.body.classList.add("modal-open");
   };
@@ -68,7 +69,6 @@ function App() {
       {error && <ErrorMessage />}
       {btnLoadMore && <LoadMoreBtn loadMore={loadMore} images={images} />}
       <ImageModal
-        openModal={openModal}
         closeModal={closeModal}
         modalIsOpen={modalIsOpen}
         modalImage={modalImage}

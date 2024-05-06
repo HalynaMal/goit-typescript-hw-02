@@ -4,21 +4,10 @@ import { Image } from "../../types";
 
 
 interface ImageModalProps {
-  openModal: () => void;
   closeModal: () => void;
   modalIsOpen: boolean;
   modalImage: Image | null;
 }
-
-// interface Image {
-//   id: string;
-//   urls: {
-//     regular: string;
-//   };
-//   alt_description: string;
-//   likes: number;
-//   slug: string;
-// }
 
 const customStyles = {
   overlay: {
