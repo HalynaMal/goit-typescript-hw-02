@@ -38,7 +38,7 @@ function App() {
     fetchImages();
   }, [query, page]);
 
-  const onSetSearchQuery = (searchTerm: string) => {
+  const onSetSearchQuery = (searchTerm: string):void => {
     setQuery(searchTerm);
     setIsLoading(true);
     setError(false);
@@ -47,7 +47,7 @@ function App() {
   const loadMore = () => {
     setPage((prevPage) => prevPage + 1);
   };
-  const openModal = (id: string) => {
+  const openModal = (id: string):void => {
     const imageModal = images.filter((image) => image.id === id)[0];
     setModalImage(imageModal);
     setIsOpen(true);

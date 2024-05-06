@@ -1,8 +1,9 @@
 import axios from "axios";
+import { Image } from "../../types";
 const apiKey = "Py_iDo0pAQqvEYoMBPZrJ7mc9_8W17Y3JqrImjifwlY";
 
 interface UnsplashResponse {
-  results: [];
+  results: [Image];
   total_pages: number;
   // results: ;
   data: string;
